@@ -6,6 +6,10 @@ import HeroSection from './Components/portifolio/HeroSection';
 import AboutSection from './Components/portifolio/AboutSection';
 import SkillsSection from './Components/portifolio/SkillsSection';
 import ProjectsSection from './Components/portifolio/ProjectsSection';
+import ServicesSection from './Components/portifolio/ServicesSection';
+import ExperienceSection from './Components/portifolio/ExperienceSection';
+import ContactSection from './Components/portifolio/ContactSection';
+import Footer from './Components/portifolio/Footer';
 // import ProjectsSection from '@/components/portfolio/ProjectsSection';
 // import ServicesSection from '@/components/portfolio/ServicesSection';
 // import ExperienceSection from '@/components/portfolio/ExperienceSection';
@@ -40,11 +44,11 @@ export default function Home() {
         <AboutSection darkMode={darkMode} />
         <SkillsSection darkMode={darkMode} />
         <ProjectsSection darkMode={darkMode} />
-        {/* <ServicesSection darkMode={darkMode} />
+        <ServicesSection darkMode={darkMode} />
         <ExperienceSection darkMode={darkMode} />
-        <ContactSection darkMode={darkMode} /> */}
+        <ContactSection darkMode={darkMode} />
       </main>
-      {/* <Footer darkMode={darkMode} /> */}
+      <Footer darkMode={darkMode} />
     </div>
   );
 }

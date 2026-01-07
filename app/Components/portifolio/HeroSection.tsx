@@ -4,7 +4,7 @@ import { ArrowDown, Github, Linkedin, Mail, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function HeroSection({ darkMode }: any) {
-    const scrollToSection = (href) => {
+    const scrollToSection = (href: any) => {
         const element = document.querySelector(href);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
@@ -86,8 +86,7 @@ export default function HeroSection({ darkMode }: any) {
                         className={`text-lg sm:text-xl max-w-2xl mx-auto mb-10 ${darkMode ? 'text-slate-400' : 'text-slate-600'
                             }`}
                     >
-                        Especializado em desenvolvimento web, APIs robustas e soluções digitais
-                        que impulsionam negócios com código limpo e arquitetura escalável.
+                        Soluções inteligentes que dominam o mercado
                     </motion.p>
 
                     {/* CTA Buttons */}

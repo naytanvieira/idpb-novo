@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import Image from "next/image";
 import tubaraoIco from "../../../public/tubarao.svg";
 
-export default function Navbar({ darkMode, setDarkMode }) {
+export default function Navbar({ darkMode, setDarkMode }: any) {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -27,7 +27,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
         { label: 'Contato', href: '#contato' },
     ];
 
-    const scrollToSection = (href) => {
+    const scrollToSection = (href: any) => {
         const element = document.querySelector(href);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });

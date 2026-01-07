@@ -5,17 +5,17 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
-export default function ProjectsSection({ darkMode }) {
-    const [selectedProject, setSelectedProject] = useState(null);
+export default function ProjectsSection({ darkMode }: any) {
+    const [selectedProject, setSelectedProject] = useState<any>(null);
 
     const projects = [
         {
             id: 1,
-            title: 'E-Commerce Platform',
+            title: ' Plataforma de E-Commerce',
             shortDescription: 'Plataforma completa de e-commerce com painel administrativo',
             fullDescription: 'Sistema completo de e-commerce desenvolvido do zero, incluindo catálogo de produtos, carrinho de compras, sistema de pagamentos integrado (Stripe/PagSeguro), gestão de estoque, painel administrativo com relatórios e analytics, e área do cliente para acompanhamento de pedidos.',
             image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop',
-            technologies: ['React', 'Node.js', 'PostgreSQL', 'Redis', 'Stripe', 'Docker'],
+            technologies: ['React', 'Node.js', 'Mysql', 'PHP'],
             demoUrl: 'https://demo.example.com',
             codeUrl: 'https://github.com/example',
             category: 'Web App',
@@ -35,21 +35,21 @@ export default function ProjectsSection({ darkMode }) {
         },
         {
             id: 3,
-            title: 'App de Delivery',
-            shortDescription: 'Aplicativo completo para delivery de alimentos',
-            fullDescription: 'Plataforma de delivery com aplicativo mobile para clientes, app para entregadores com tracking GPS em tempo real, painel para restaurantes gerenciarem pedidos e cardápio, e dashboard administrativo com métricas e relatórios.',
-            image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&h=500&fit=crop',
-            technologies: ['React Native', 'Node.js', 'MongoDB', 'Socket.io', 'Google Maps'],
+            title: 'Landing Pages',
+            shortDescription: 'Uma página focada em um único objetivo, sem distrações.',
+            fullDescription: '🎯 Objetivo principal da landing page é Captar leads (nome, e-mail, telefone), gerar vendas, solicitar orçamentos, inscrições em eventos, downloads de materiais e contato direto (WhatsApp, formulário, etc.)',
+            image: 'https://graphicsfamily.com/wp-content/uploads/edd/2022/02/Free-Modern-Landing-Page-Template.jpg?w=800&h=500&fit=crop',
+            technologies: ['Next.Js', 'PHP', 'MYSQL', 'Google Maps'],
             demoUrl: 'https://demo.example.com',
             codeUrl: 'https://github.com/example',
-            category: 'Mobile',
+            category: 'Web App',
             highlights: ['10k downloads', 'Rating 4.8★', 'Real-time tracking'],
         },
         {
             id: 4,
-            title: 'Dashboard Analytics',
-            shortDescription: 'Plataforma de Business Intelligence',
-            fullDescription: 'Dashboard analítico para visualização de dados empresariais com gráficos interativos, KPIs personalizáveis, relatórios automatizados, integração com múltiplas fontes de dados e exportação em diversos formatos.',
+            title: 'Gestão Financeira Para Igrejas',
+            shortDescription: 'Plataforma de Gestão financeira para igrejas',
+            fullDescription: 'Um sistema completo de gestão para igrejas, que reúne controle financeiro, gestão de membros, usuários e células em um único lugar. Com dashboards mensais, lista de presença nos cultos e total flexibilidade para ser modelado conforme a necessidade de cada igreja, a plataforma traz organização, transparência e praticidade para a administração.',
             image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop',
             technologies: ['React', 'Python', 'FastAPI', 'PostgreSQL', 'Chart.js', 'Pandas'],
             demoUrl: 'https://demo.example.com',
@@ -95,8 +95,8 @@ export default function ProjectsSection({ darkMode }) {
                     className="text-center mb-16"
                 >
                     <span className={`inline-block px-4 py-1.5 rounded-full text-sm font-medium mb-4 ${darkMode
-                            ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20'
-                            : 'bg-cyan-50 text-cyan-600 border border-cyan-100'
+                        ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20'
+                        : 'bg-cyan-50 text-cyan-600 border border-cyan-100'
                         }`}>
                         Projetos
                     </span>
@@ -123,8 +123,8 @@ export default function ProjectsSection({ darkMode }) {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             onClick={() => setSelectedProject(project)}
                             className={`group cursor-pointer rounded-2xl overflow-hidden ${darkMode
-                                    ? 'bg-slate-800 border border-slate-700 hover:border-slate-600'
-                                    : 'bg-white border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-md'
+                                ? 'bg-slate-800 border border-slate-700 hover:border-slate-600'
+                                : 'bg-white border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-md'
                                 } transition-all duration-300`}
                         >
                             {/* Image */}
@@ -136,16 +136,16 @@ export default function ProjectsSection({ darkMode }) {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                 <div className="absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
-                                    <Button size="sm" className="bg-white/90 text-slate-900 hover:bg-white rounded-lg">
+                                    {/* <Button size="sm" className="bg-white/90 text-slate-900 hover:bg-white rounded-lg">
                                         <ExternalLink className="w-4 h-4 mr-1" />
                                         Demo
-                                    </Button>
-                                    <Button size="sm" variant="outline" className="bg-white/10 backdrop-blur border-white/20 text-white hover:bg-white/20 rounded-lg">
+                                    </Button> */}
+                                    {/* <Button size="sm" variant="outline" className="bg-white/10 backdrop-blur border-white/20 text-white hover:bg-white/20 rounded-lg">
                                         <Github className="w-4 h-4 mr-1" />
                                         Código
-                                    </Button>
+                                    </Button> */}
                                 </div>
-                                <Badge className={`absolute top-4 right-4 ${darkMode ? 'bg-slate-900/80' : 'bg-white/90'
+                                <Badge className={`absolute top-4 right-4 ${darkMode ? 'bg-slate-900/80 text-white' : 'bg-white/90 text-black'
                                     } backdrop-blur`}>
                                     {project.category}
                                 </Badge>
@@ -164,8 +164,8 @@ export default function ProjectsSection({ darkMode }) {
                                         <span
                                             key={tech}
                                             className={`px-2 py-1 text-xs rounded-md ${darkMode
-                                                    ? 'bg-slate-700 text-slate-300'
-                                                    : 'bg-slate-100 text-slate-600'
+                                                ? 'bg-slate-700 text-slate-300'
+                                                : 'bg-slate-100 text-slate-600'
                                                 }`}
                                         >
                                             {tech}
@@ -185,7 +185,7 @@ export default function ProjectsSection({ darkMode }) {
 
                 {/* Project Modal */}
                 <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-                    <DialogContent className={`max-w-3xl ${darkMode ? 'bg-slate-900 border-slate-800' : 'bg-white'}`}>
+                    <DialogContent className={`max-w-3xl   ${darkMode ? 'bg-slate-900 border-slate-800' : 'bg-white'}`}>
                         {selectedProject && (
                             <>
                                 <DialogHeader>
@@ -212,12 +212,12 @@ export default function ProjectsSection({ darkMode }) {
 
                                     {/* Highlights */}
                                     <div className="flex flex-wrap gap-3">
-                                        {selectedProject.highlights.map((highlight) => (
+                                        {selectedProject.highlights.map((highlight: any) => (
                                             <span
                                                 key={highlight}
                                                 className={`px-3 py-1.5 rounded-lg text-sm font-medium ${darkMode
-                                                        ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20'
-                                                        : 'bg-blue-50 text-blue-600 border border-blue-100'
+                                                    ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20'
+                                                    : 'bg-blue-50 text-blue-600 border border-blue-100'
                                                     }`}
                                             >
                                                 {highlight}
@@ -231,12 +231,12 @@ export default function ProjectsSection({ darkMode }) {
                                             Tecnologias Utilizadas
                                         </h4>
                                         <div className="flex flex-wrap gap-2">
-                                            {selectedProject.technologies.map((tech) => (
+                                            {selectedProject.technologies.map((tech: any) => (
                                                 <span
                                                     key={tech}
                                                     className={`px-3 py-1.5 text-sm rounded-lg ${darkMode
-                                                            ? 'bg-slate-800 text-slate-300 border border-slate-700'
-                                                            : 'bg-slate-100 text-slate-700'
+                                                        ? 'bg-slate-800 text-slate-300 border border-slate-700'
+                                                        : 'bg-slate-100 text-slate-700'
                                                         }`}
                                                 >
                                                     {tech}
