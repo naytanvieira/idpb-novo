@@ -49,9 +49,9 @@ const contactInfo = [
 
 const socialLinks = [
     { icon: MessageCircle, label: 'WhatsApp', href: 'https://wa.me/5511999999999', color: 'bg-green-500 hover:bg-green-600' },
-    { icon: Instagram, label: 'Instagram', href: 'https://instagram.com', color: 'bg-gradient-to-br from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600' },
-    { icon: Youtube, label: 'YouTube', href: 'https://youtube.com', color: 'bg-red-500 hover:bg-red-600' },
-    { icon: Facebook, label: 'Facebook', href: 'https://facebook.com', color: 'bg-blue-600 hover:bg-blue-700' }
+    { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/idpbbrant/', color: 'bg-gradient-to-br from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600' },
+    // { icon: Youtube, label: 'YouTube', href: 'https://youtube.com', color: 'bg-red-500 hover:bg-red-600' },
+    // { icon: Facebook, label: 'Facebook', href: 'https://facebook.com', color: 'bg-blue-600 hover:bg-blue-700' }
 ];
 
 export default function ContactSection() {

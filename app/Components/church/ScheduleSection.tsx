@@ -1,9 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, Clock, MapPin, Users, BookOpen, Heart, Music } from 'lucide-react';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import EventModal from '../EventsModel';
 
 const schedules = [
     {
@@ -47,23 +50,40 @@ const schedules = [
 
 const upcomingEvents = [
     {
-        title: 'Conferência de Jovens',
-        date: '15-17 Março',
-        description: 'Três dias de transformação e avivamento'
+        title: 'Congresso Nacional de Jovens 2026',
+        date: '04 - 06 de Junho',
+        description: 'INDO ALÉM [I.A]',
+        button: true,
     },
     {
         title: 'Batismo nas Águas',
         date: '24 Março',
-        description: 'Celebre sua nova vida em Cristo'
+        description: 'Celebre sua nova vida em Cristo',
+        button: false,
     },
     {
         title: 'Retiro de Casais',
         date: '05-07 Abril',
-        description: 'Fortaleça seu relacionamento'
+        description: 'Fortaleça seu relacionamento',
+        button: false,
     }
 ];
 
+
+
 export default function ScheduleSection() {
+    const [isOpen, setIsOpen] = useState(false)
+    const event = {
+        title: "Conferência Nacional de Jovens",
+        description: `As inscrições para o 1º lote do Congresso Nacional de Jovens 2026 já estão abertas!
+        Com o tema “Indo Além”, esse será um tempo de expansão, crescimento e posicionamento. É hora de romper limites, fortalecer a fé e viver tudo aquilo que Deus tem preparado para essa geração!
+        Não fique de fora desse mover. Garanta sua vaga no primeiro lote e venha viver dias que marcarão a sua história!
+        `,
+        date: "4 à 6 de Junho de 2026",
+        image: "https://i.postimg.cc/BvtpYxG5/Save-Clip-App-639727196-18168087097399564-3470087830559805758-n.jpg",
+        registrationLink: "https://idpbnacional.com/CNJ2026/",
+    }
+
     return (
         <section id="programacoes" className="py-24 bg-gradient-to-b from-white to-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -170,8 +190,18 @@ export default function ScheduleSection() {
                                     <div className="text-[#c9a962] font-bold text-sm mb-2">{event.date}</div>
                                     <h4 className="text-white font-semibold text-lg mb-2">{event.title}</h4>
                                     <p className="text-white/70 text-sm">{event.description}</p>
+                                    {event.button && (
+                                        <Button onClick={() => setIsOpen(true)} className="inline-flex items-center gap-2 px-0 py-3 bg-transparent text-[#c9a962] font-semibold rounded-full transition-colors hover:underline hover:bg-transparent">
+                                            Saiba mais
+                                        </Button>
+                                    )}
                                 </motion.div>
                             ))}
+                            <EventModal
+                                isOpen={isOpen}
+                                onClose={() => setIsOpen(false)}
+                                event={event}
+                            />
                         </div>
                     </div>
                 </motion.div>
